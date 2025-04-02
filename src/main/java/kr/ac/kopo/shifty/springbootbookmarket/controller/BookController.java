@@ -24,7 +24,7 @@ public class BookController {
         model.addAttribute("bookList",bookList);
         return "books";
     }
-
+//
     @GetMapping(value = "/all")
     public ModelAndView requestAllBookList() {
         ModelAndView mAV = new ModelAndView();
