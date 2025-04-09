@@ -7,5 +7,5 @@ import java.util.List;
 @Repository
 public interface BookRepository {
     List<Book> getAllBookList();
-
+    Book getBookById(String bookId);
 }
