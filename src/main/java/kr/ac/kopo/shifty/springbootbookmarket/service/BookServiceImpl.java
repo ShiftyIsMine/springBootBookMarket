@@ -27,7 +27,7 @@ public class BookServiceImpl implements BookService {
 
     @Override
     public List<Book> getbooksByCategory(String category) {
-        List<Book> Category = new ArrayList<>();
+        List<Book> Category = bookRepository.getBookListCategory(category);
         return Category;
     }
 }
