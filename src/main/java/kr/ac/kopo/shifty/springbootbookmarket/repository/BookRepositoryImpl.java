@@ -72,8 +72,19 @@ public class BookRepositoryImpl implements BookRepository{
         }
 
         if(bookInfo==null){
-            throw new IllegalArgumentException("도서번호가 <" +bookId + ">인 해당 도서를 찾을 수가 없는데여");
+            throw new IllegalArgumentException("도서번호가 <" +bookId + ">인 도서를 찾을 수가 없는데여");
         }
         return bookInfo;
+    }
+
+    @Override
+    public List<Book> getBookListCategory(String category) {
+        List<Book> booksByCategory = new ArrayList<>();
+        for (Book book : listOfBooks) {
+            if (book.getCategory()!=null && book.getCategory().equals(category)) {
+                booksByCategory.add(book);
+            }
+        }
+        return booksByCategory;
     }
 }
