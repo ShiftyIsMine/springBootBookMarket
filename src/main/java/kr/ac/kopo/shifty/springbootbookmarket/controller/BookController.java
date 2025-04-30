@@ -54,4 +54,15 @@ public class BookController {
         model.addAttribute("bookList",booksByFilter);
         return "books";
     }
+
+    @GetMapping("/add")
+    public String requestAddBookForm(){
+        return "addBook";
+    }
+
+    @PostMapping("/add")
+    public String requestAddBook(@ModelAttribute("book") Book book) {
+        bookService.setNewBook(book);
+        return "redirect:/books";
+    }
 }

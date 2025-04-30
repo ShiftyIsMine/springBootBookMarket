@@ -1,15 +1,13 @@
 package kr.ac.kopo.shifty.springbootbookmarket.domain;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import java.math.BigDecimal;
 
-@Getter
-@Setter
-@NoArgsConstructor
+@Data
+//@Getter
+//@Setter
+//@NoArgsConstructor
 
 public class Book {
     private String bookId;          //도서 번호

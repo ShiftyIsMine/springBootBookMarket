@@ -11,6 +11,6 @@ public interface BookService {
     List<Book> getAllBookList();
     Book getBookById(String bookId);
     List<Book> getbooksByCategory(String category);
-
+    void setNewBook(Book book);
     Set<Book> getBookListByFilter(Map<String, List<String>> filter);
 }
