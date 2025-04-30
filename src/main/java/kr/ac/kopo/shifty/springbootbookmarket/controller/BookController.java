@@ -5,6 +5,7 @@ import kr.ac.kopo.shifty.springbootbookmarket.service.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -68,5 +69,10 @@ public class BookController {
     @ModelAttribute
     public void addAttributes(Model model) {
         model.addAttribute("addTitle", "등록등록ㅇㅇ");
+    }
+    //데이터 연결 초기화 initbinder
+    @InitBinder
+    public void initBinder(WebDataBinder binder) {
+        binder.setAllowedFields("bookId","name","author","unitPrice","description","publisher","category","unitInStock","releaseDate","condition");
     }
 }
