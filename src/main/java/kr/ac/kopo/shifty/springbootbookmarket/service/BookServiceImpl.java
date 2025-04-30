@@ -5,8 +5,9 @@ import kr.ac.kopo.shifty.springbootbookmarket.repository.BookRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 @Service
 public class BookServiceImpl implements BookService {
@@ -27,7 +28,15 @@ public class BookServiceImpl implements BookService {
 
     @Override
     public List<Book> getbooksByCategory(String category) {
-        List<Book> Category = bookRepository.getBookListCategory(category);
-        return Category;
+        List<Book> booksByCategory = bookRepository.getBookListCategory(category);
+        return booksByCategory;
     }
+
+
+    @Override
+    public Set<Book> getBookListByFilter(Map<String, List<String>> filter) {
+        Set<Book> booksByFilter = bookRepository.getBookListByFilter(filter);
+        return booksByFilter;
+    }
+
 }
