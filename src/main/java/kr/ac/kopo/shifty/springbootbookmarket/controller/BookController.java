@@ -65,4 +65,8 @@ public class BookController {
         bookService.setNewBook(book);
         return "redirect:/books";
     }
+    @ModelAttribute
+    public void addAttributes(Model model) {
+        model.addAttribute("addTitle", "등록등록ㅇㅇ");
+    }
 }
